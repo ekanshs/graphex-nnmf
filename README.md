@@ -13,7 +13,9 @@ This package implements coordinate-ascent variational inference for sparse excha
 * 64-bit architecture
 
 ## Scripts
-We provide two scripts, 1. For simulating test dataset, 2. to run the model on a given dataset:
+We provide two scripts, 
+1. For simulating test dataset, 
+2. For running the model on a given dataset
 
 #### data/simulate_data.py
 Simulates a dataset with given parameter setting; Splits the data into Train, Lookup and Holdout set
