@@ -2,7 +2,9 @@
 
 ## About
 
-This package implements coordinate-ascent variational inference for sparse exchangeable bipartite graph model described in the article *Exchangeable Modelling of Relational Data: Checking Sparsity, Data Splitting, and Sparse Exchangeable Poisson Matrix Factorization*
+This package implements coordinate-ascent variational inference for sparse exchangeable bipartite graph model described in the article *Exchangeable Modelling of Relational Data: Checking Sparsity, Data Splitting, and Sparse Exchangeable Poisson Matrix Factorization*. This works well out of the box for discovering latent structure in large matrices with entries that are natural numbers. The algorithm is well-adapted to handling matrices where many entries are 0. Inference generally runs quickly on GPU.
+
+This roughly corresponds to the Poisson matrix factorization model of [*Scalable Recommendation with Poisson Factorization*](https://arxiv.org/pdf/1311.1704.pdf) in the special case that sparsity parameters su and si are both negative.
 
 
 ## Requirements
@@ -13,11 +15,9 @@ This package implements coordinate-ascent variational inference for sparse excha
 * 64-bit architecture
 
 ## Scripts
-We provide two scripts, 
-1. For simulating test dataset, 
-2. For running the model on a given dataset
+We provide two scripts: 
 
-#### data/simulate_data.py
+#### simulate_data.py
 Simulates a dataset with given parameter setting; Splits the data into Train, Lookup and Holdout set
 
 For usage, run:
@@ -26,15 +26,16 @@ cd scripts
 python simulate_data.py -h
 ```
 
-#### run_script.py
-This script runs the model on a given dataset.
+#### run_model.py
+Runs the model on a given dataset.
+
 Requires three files in the data directory: train.pkl, test_lookup.pkl, test_holdout.pkl
-For the format in which data should be stored, check data/simulate_data.py
+For the format in which data should be stored, check: scripts/simulate_data.py
 
 For usage, run: 
 ```bash
 cd scripts
-python run_script.py -h
+python run.py -h
 ```
 
 ## Contributors

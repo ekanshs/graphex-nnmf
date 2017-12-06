@@ -3,3 +3,7 @@
 *.pkl
 *.log
 *.png
+*.txt
+.ipynb_checkpoints/*
+log/*
+logs/*
